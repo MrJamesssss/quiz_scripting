@@ -1,0 +1,15 @@
+Archivo analizado: file1.txt
+Cantidad de lineas: 5
+Cantidad total de palabras: 34
+Cantidad de veces que aparece 'Python': 3
+
+Archivo analizado: file2.txt
+Cantidad de lineas: 5
+Cantidad total de palabras: 32
+Cantidad de veces que aparece 'Python': 1
+
+Archivo analizado: file3.txt
+Cantidad de lineas: 5
+Cantidad total de palabras: 33
+Cantidad de veces que aparece 'Python': 1
+
