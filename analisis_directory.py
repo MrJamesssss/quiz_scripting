@@ -3,7 +3,7 @@ import sys
 
 def analizar_archivo(file_path):
     try:
-        with open(file_path, 'r', encoding='utf-8') as f:
+        with open(file_path, 'r') as f:
             lines = f.readlines()
             Lineas = len(lines)
             Palabras = sum(len(line.split()) for line in lines)
@@ -28,20 +28,20 @@ def main():
     txt_files = [f for f in os.listdir(directory) if f.endswith('.txt')]
     
     if not txt_files:
-        with open(os.path.join(directory, 'informe.txt'), 'w', encoding='utf-8') as analisis:
+        with open(os.path.join(directory, 'informe.txt'), 'w') as analisis:
             analisis.write("No se encontraron archivos de texto.\n")
         print("No se encontraron archivos de texto.")
         return
 
     report_path = os.path.join(directory, 'informe.txt')
-    with open(report_path, 'w', encoding='utf-8') as analisis:
+    with open(report_path, 'w') as analisis:
         for txt_file in txt_files:
             file_path = os.path.join(directory, txt_file)
             analysis = analizar_archivo(file_path)
             if analysis:
                 Lineas, Palabras, Pythons = analysis
                 analisis.write(f"Archivo analizado: {txt_file}\n")
-                analisis.write(f"Cantidad de líneas: {Lineas}\n")
+                analisis.write(f"Cantidad de lineas: {Lineas}\n")
                 analisis.write(f"Cantidad total de palabras: {Palabras}\n")
                 analisis.write(f"Cantidad de veces que aparece 'Python': {Pythons}\n")
                 analisis.write("\n")
